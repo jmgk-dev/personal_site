@@ -1,0 +1,14 @@
+body {
+	background-color: black;
+}
+
+* {
+	font-family: Helvetica;
+	color: darkgrey;
+}
+
+.top_bar {
+	height: 100px;
+	display: grid;
+	grid-template-columns: auto minmax(300px, 800px) auto;
+}

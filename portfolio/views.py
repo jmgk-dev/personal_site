@@ -1,0 +1,65 @@
+import os
+
+import requests
+
+from django.http import HttpResponse
+
+from .forms import AddProjectForm
+
+from django.shortcuts import render, redirect
+# from django.conf import settings
+# from django.contrib import messages
+
+# from django.contrib.auth import get_user_model
+# from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import ListView, DetailView, FormView
+# from django.urls import reverse_lazy
+
+from .models import Project
+
+from django.core.files import File
+from django.core.files.temp import NamedTemporaryFile
+from PIL import Image
+
+
+
+class Home(ListView):
+
+    queryset = Project.objects.all()
+    template_name = "portfolio/home_page.html"
+
+
+class ProjectDetail(DetailView):
+
+    model = Project
+
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+
+    template_name = 'portfolio/project_detail.html'
+
+
+class AddProject(FormView):
+
+    form_class = AddProjectForm
+    template_name = 'portfolio/add_project.html'
+
+    def form_valid(self, form):
+        image = form.cleaned_data["image"]
+        title = form.cleaned_data["title"]
+        image_title = f"{title}.png"
+
+        with Image.open(image.file) as img:
+            img.thumbnail((1500,1000), Image.LANCZOS)
+
+            with NamedTemporaryFile(suffix=".png", delete=False) as temp_file:
+                img.save(temp_file, format='PNG', progressive=True, optimize=True)
+                form.instance.image = File(temp_file, name=image_title)
+
+                form.save()
+
+        return redirect("portfolio:success_page")
+
+
+def success_page(request):
+    return render(request, "portfolio/success_page.html")

@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jmgk.dev</title>
+
+	{# Global stylesheets #}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main_base.css' %}">
+	<link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
+
+	{% block extra_css %}
+    {% endblock %}
+
+</head>
+<body>
+
+	<div class="top_bar">
+		
+	</div>
+
+	{% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "portfolio/main_base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/home_page.css' %}"> -->
+{% endblock %}
+
+{% block content %}
+
+<span>Success!</span>
+
+<a href="{% url 'portfolio:home' %}">Home</a>
+
+{% endblock content %}

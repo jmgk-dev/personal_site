@@ -1,0 +1,38 @@
+{% extends "portfolio/main_base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/home_page.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="home_page_container">
+
+	<div class="main_text_container">
+		<span class="main_text">Hi, I’m Jamie Kingett. I’m a web developer specialising in Python 
+		and Django. Check out some of my work below, connect with me <a href="https://www.linkedin.com/in/jamie-kingett/">here</a>.
+	</span>
+	</div>
+
+	<div class="portfolio_container">
+
+		{% for project in object_list %}
+		<a href="{% url 'portfolio:project_detail' slug=project.slug %}">
+			<div>
+				{{project.title}}
+				<img class="project_image" src="{{ project.image.url }}">
+			</div>
+		</a>
+		{% endfor %}
+
+	</div>
+
+	<div class="links_container">
+		<div>Link</div>
+		<div>Link</div>
+	</di>
+
+</div>
+
+{% endblock content %}
