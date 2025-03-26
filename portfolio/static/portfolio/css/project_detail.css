@@ -25,11 +25,13 @@
 }
 
 .main_text {
-	font-size: x-large;
 	margin-top: 50px;
 	max-width: 850px;
-	overflow-wrap: break-word;
-  	hyphens: manual;
+  	font-size: 20px;
+	font-style: normal;
+	font-weight: 300;
+	text-align: left;
+	line-height: 1.4;
 }
 
 .image_container {
@@ -64,7 +66,7 @@
 }
 
 .main_text {
-	font-size: large;
+/*	font-size: large;*/
 	max-width: 60vw;
 }
 
@@ -112,18 +114,17 @@
 		margin-right: 10px;
 	}
 
-.project_image {
-	margin-top: 20px;
-}
+	.project_image {
+		margin-top: 20px;
+	}
 
+	.title_container {
+		margin-top: 70px;
+	}
 
-.title_container {
-	margin-top: 70px;
-}
-
-.main_text {
-	font-size: medium;
-}
+	.main_text {
+  		font-size: 17px;
+	}
 
 
 
