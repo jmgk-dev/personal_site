@@ -7,10 +7,9 @@
 
 {% block content %}
 
-<span>Success!</span>
-
-<a href="{% url 'portfolio:add_language' %}">Add a Language</a>
-<a href="{% url 'portfolio:add_project' %}">Add a Project</a>
-<a href="{% url 'portfolio:home' %}">Home</a>
+	<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
 
 {% endblock content %}

@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/add_project.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/add_language.css' %}">
 {% endblock %}
 
 {% block content %}
 
-<div class="add_project_container">
+<div class="add_language_container">
 
-    <div class="form_container">
+    <div class=form_container>
         <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add project</button>
+        <button type="submit">Add language</button>
     </div>
 
 </div>

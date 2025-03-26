@@ -4,7 +4,7 @@ import requests
 
 from django.http import HttpResponse
 
-from .forms import AddProjectForm
+from .forms import AddProjectForm, UpdateProjectForm, AddLanguageForm, UpdateLanguageForm
 
 from django.shortcuts import render, redirect
 # from django.conf import settings
@@ -12,10 +12,10 @@ from django.shortcuts import render, redirect
 
 # from django.contrib.auth import get_user_model
 # from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import ListView, DetailView, FormView
-# from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, FormView, UpdateView
+from django.urls import reverse_lazy
 
-from .models import Project
+from .models import Project, Language
 
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
@@ -59,6 +59,60 @@ class AddProject(FormView):
                 form.save()
 
         return redirect("portfolio:success_page")
+
+
+class UpdateProject(UpdateView):
+
+    model = Project
+
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+
+    form_class = UpdateProjectForm
+    template_name = 'portfolio/update_project.html'
+
+    success_url = reverse_lazy("portfolio:success_page")
+
+
+
+class AddLanguage(FormView):
+
+    form_class = AddLanguageForm
+    template_name = 'portfolio/add_language.html'
+
+    def form_valid(self, form):
+        logo = form.cleaned_data["logo"]
+        title = form.cleaned_data["title"]
+        logo_title = f"{title}.png"
+
+        with Image.open(logo.file) as img:
+            img.thumbnail((500,500), Image.LANCZOS)
+
+            with NamedTemporaryFile(suffix=".png", delete=False) as temp_file:
+                img.save(temp_file, format='PNG', progressive=True, optimize=True)
+                form.instance.logo = File(temp_file, name=logo_title)
+
+                form.save()
+
+        return redirect("portfolio:success_page")
+
+
+class UpdateLanguage(UpdateView):
+
+    model = Language
+
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
+
+    form_class = UpdateLanguageForm
+    template_name = 'portfolio/update_language.html'
+
+    success_url = reverse_lazy("portfolio:success_page")
+
+
+
+def about_page(request):
+    return render(request, "portfolio/about_page.html")
 
 
 def success_page(request):

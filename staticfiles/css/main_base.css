@@ -1,14 +1,116 @@
 body {
-	background-color: black;
+/*	background-color: white;*/
 }
 
 * {
-	font-family: Helvetica;
-	color: darkgrey;
+	font-family: Montserrat;
+	letter-spacing: 1px;
+}
+
+li {
+	list-style-type: none;
+}
+
+ul {
+	padding: 0;
+}
+
+button {
+	background-color: none;
+}
+
+#bg-wrap {
+	display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
 }
 
 .top_bar {
 	height: 100px;
+	width: 100%;
 	display: grid;
-	grid-template-columns: auto minmax(300px, 800px) auto;
+	grid-template-columns: 1fr 1fr;
+	position: fixed;
+	pointer-events: none;
 }
+
+.jmgk_logo_container {
+	grid-column: 1;
+}
+
+.jmgk_logo {
+	width: 60px;
+	margin-top: 20px;
+	margin-left: 20px;
+	pointer-events: auto;
+}
+
+.question_mark {
+	width: 60px;
+/*	margin-top: 20px;
+	margin-left: 20px;
+	pointer-events: auto;*/
+}
+
+.top_bar_links_container {
+	grid-column: 2;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.top_bar_links {
+	margin-top: 25px;
+	display: flex;
+	gap: 20px;
+	margin-right: 40px;
+	pointer-events: auto;
+}
+
+.footer_links_container {
+	display: flex;
+	justify-content: center;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+	.jmgk_logo {
+		width: 50px;
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+/*	.top_bar_links {
+		margin-top: 1px;
+		margin-right: 15px;
+	}
+*/
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+	.jmgk_logo {
+		width: 40px;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+
+	.top_bar_links {
+		margin-top: 1px;
+		margin-right: 15px;
+	}
+
+
+}
+

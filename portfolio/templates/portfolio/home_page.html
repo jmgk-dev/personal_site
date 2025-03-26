@@ -9,29 +9,66 @@
 
 <div class="home_page_container">
 
-	<div class="main_text_container">
-		<span class="main_text">Hi, I’m Jamie Kingett. I’m a web developer specialising in Python 
-		and Django. Check out some of my work below, connect with me <a href="https://www.linkedin.com/in/jamie-kingett/">here</a>.
-	</span>
+	<div class="text_container">
+
+			<span class="main_text">Hi, I’m Jamie Kingett. I’m a web developer specialising in Python 
+			and Django. Check out some of my work below, connect with me <a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank">here</a>.
+			</span>
+
+			<div class="sub_container">
+				<span class="sub_text">I am a passionate and adaptable developer with a background in the creative and technology industries. I specialise in back-end development using Python, Django, Wagtail CMS and PostgreSQL. I enjoy working in creative and dynamic environments, taking the initiative and learning new concepts and viewpoints.</span>
+
+					<ul class="sub_links">
+						<li class="sub_link">
+							<a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank"><img src="{% static 'image/email.png' %}" alt="Email logo" class="service_logo"></a>
+							<span class="service_title">jamie@jmgk.dev</span>
+						</li>
+
+						<li class="sub_link">
+							<a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank"><img src="{% static 'image/in_black.png' %}" alt="LinkedIn logo" class="service_logo"></a>
+							<span class="service_title">LinkedIn</span>
+						</li>
+
+<!-- 						<li><a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank"><img src="{% static 'image/github-mark.png' %}" alt="GitHub logo" class="service_logo"></a>
+							<span class="service_title">GitHub</span>
+						</li> -->
+					</ul>
+
+			</div>
+
 	</div>
+
+	<div class="divider"></div>
 
 	<div class="portfolio_container">
 
+		<ul class="portfolio_items">
 		{% for project in object_list %}
-		<a href="{% url 'portfolio:project_detail' slug=project.slug %}">
-			<div>
-				{{project.title}}
-				<img class="project_image" src="{{ project.image.url }}">
-			</div>
-		</a>
+		<li class="portfolio_item">
+			<span class="project_image_container">
+				<a href="{% url 'portfolio:project_detail' slug=project.slug %}">
+					<img class="project_image" src="{{ project.image.url }}">
+				</a>
+			</span>
+			<span class="project_title">{{project.title}}</span>
+<!-- 			<span class="built_using">Built using: 
+
+				{% for lang in project.languages.all %}
+					{{ lang.title }}
+				{% endfor %}
+
+			</span> -->
+		</li>
 		{% endfor %}
+		</ul>
 
 	</div>
 
-	<div class="links_container">
-		<div>Link</div>
-		<div>Link</div>
-	</di>
+<!--     <div id="video-background">
+        <div id="video-foreground">
+            <iframe id="vimeoplayer" src="https://player.vimeo.com/video/189495109?h=fb3abedcaf?autoplay=1&muted=1&loop=1&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+    </div> -->
 
 </div>
 

@@ -1,0 +1,15 @@
+.add_language_container {
+	display: grid;
+	grid-template-rows: auto;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+.form_container {
+	grid-row: 1;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
