@@ -34,6 +34,10 @@
 	line-height: 1.4;
 }
 
+.visit_link {
+	color: black;
+}
+
 .image_container {
 	margin-top: 50px;
 	display: flex;

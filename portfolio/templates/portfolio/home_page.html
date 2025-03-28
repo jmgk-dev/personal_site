@@ -3,20 +3,20 @@
 
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/home_page.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 {% endblock %}
 
 {% block content %}
 
 <div class="home_page_container">
 
-	<div class="text_container">
+	<div class="header_container">
+
+		<div class="main_container">
 
 			<span class="main_text">Hi, I’m Jamie Kingett. I’m a web developer specialising in Python 
-			and Django. Check out some of my work below, connect with me <a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank">here</a>.
+			and Django. Check out some of my work below, connect with me <a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank" class="here_link">here</a>.
 			</span>
-
-			<div class="sub_container">
-				<span class="sub_text">I am a passionate and adaptable developer with a background in the creative and technology industries. I specialise in back-end development using Python, Django, Wagtail CMS and PostgreSQL. I enjoy working in creative and dynamic environments, taking the initiative and learning new concepts and viewpoints.</span>
 
 					<ul class="sub_links">
 						<li>
@@ -31,12 +31,57 @@
 							</a>
 						</li>
 
-<!-- 						<li><a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank"><img src="{% static 'image/github-mark.png' %}" alt="GitHub logo" class="service_logo"></a>
+						<li><a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank"><img src="{% static 'image/github-mark.png' %}" alt="GitHub logo" class="service_logo"></a>
 							<span class="service_title">GitHub</span>
-						</li> -->
+						</li>
 					</ul>
 
+		</div>
+
+		<div class="sub_container">
+				<!-- <span class="sub_text">I am a passionate and adaptable developer with a background in the creative and technology industries. I specialise in back-end development using Python, Django, Wagtail CMS and PostgreSQL. I enjoy working in creative and dynamic environments, taking the initiative and learning new concepts and viewpoints.</span> -->
+
+			<div class="slider-thumb">
+
+					<div class="program_icons">
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg" class="program_icon" />
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="program_icon" />
+
+						<img src="{% static 'image/wagtail_500.png' %}" class="program_icon" />
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg" class="program_icon" />
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" class="program_icon" />
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" class="program_icon" />
+						
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="program_icon"  />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-plain.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg" class="program_icon" />
+
+            			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-plain.svg" class="program_icon" />
+          
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-plain.svg" class="program_icon" />
+
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-plain.svg" class="program_icon" />
+           
+					</div>
+
 			</div>
+
+		</div>
 
 	</div>
 
@@ -52,7 +97,10 @@
 					<img class="project_image" src="{{ project.image.url }}">
 				</a>
 			</span>
-			<span class="project_title">{{project.title}}</span>
+			<div class="project_title_container">
+				<div class="project_title">
+					<a href="{% url 'portfolio:project_detail' slug=project.slug %}" class="project_text"><span>{{project.title}}</span></a>
+			</div>
 <!-- 			<span class="built_using">Built using: 
 
 				{% for lang in project.languages.all %}
