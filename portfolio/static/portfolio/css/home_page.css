@@ -421,7 +421,7 @@
 
 	.main_text {
 		font-size: 15px;
-		max-width: 60vw;
+		width: 75%;
 	}
 
 
@@ -450,9 +450,6 @@
 	.program_icon {
 		width: 30px;
 	}
-
-
-
 
 
 }
