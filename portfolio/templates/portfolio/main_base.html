@@ -28,13 +28,18 @@
 	<div class="top_bar">
 
 		<div class="jmgk_logo_container">
-			<a href="{% url 'portfolio:home' %}"><img src="{% static 'image/logo_v1.png' %}" alt="JMGK logo" class="jmgk_logo"></a>
+			<a href="{% url 'portfolio:home' %}">
+				<img src="{% static 'image/logo_v2_a.png' %}" alt="JMGK logo" class="jmgk_logo">
+				<!-- <span class="jmgk_logo top_bar_link">JMGK</span> -->
+			</a>
 		</div>
 
 		<div class="top_bar_links_container">
 			<nav class="top_bar_links">
-				<!-- <span><a href="{% url 'portfolio:about' %}">?</a></span> -->
-				<a href="{% url 'portfolio:about' %}"><img src="{% static 'image/question_mark.png' %}" alt="?" class="question_mark"></a>
+				<span><a href="href=mailto:jamie@jmgk.dev" class="top_bar_link">Contact</a></span>
+				<span class="top_bar_spacer">|</span>
+				<span><a href="{% url 'portfolio:about' %}" class="top_bar_link">About</a></span>
+				<!-- <a href="{% url 'portfolio:about' %}"><img src="{% static 'image/question_mark.png' %}" alt="?" class="question_mark"></a> -->
 <!-- 				<div class="dropdown">
   					<div onclick="menuAni(this); dropDown()" class="dropbtn">
   						<div class="bar1"></div>

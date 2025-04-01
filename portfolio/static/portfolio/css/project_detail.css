@@ -1,8 +1,6 @@
 .project_container {
 	display: grid;
 	grid-template-rows: auto auto auto;
-	margin-left: 70px;
-	margin-right: 70px;
 }
 
 .title_container {
@@ -10,7 +8,7 @@
 	padding: 0;
 	display: flex;
 	justify-content: center;
-	margin-top: 100px;
+	margin-top: 130px;
 }
 
 .text_container {
@@ -21,15 +19,18 @@
 }
 
 .title_text {
-	font-size: xx-large;
+  	font-size: 30px;
+	font-style: normal;
+	font-weight: 500;
 }
 
 .main_text {
 	margin-top: 50px;
-	max-width: 850px;
+	margin-left: 18vw;
+	margin-right: 18vw;
   	font-size: 20px;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 400;
 	text-align: left;
 	line-height: 1.4;
 }
@@ -43,6 +44,8 @@
 	display: flex;
 	justify-content: center;
 	margin-bottom: 70px;
+	margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .project_image {
@@ -65,49 +68,34 @@
 
 @media screen and (max-width: 1500px) {
 
-.title_text {
-	font-size: x-large;
-}
 
-.main_text {
-/*	font-size: large;*/
-	max-width: 60vw;
-}
 
-	.project_image {
+.project_image {
 		margin-top: 10px;
 	}
 
 
 }
 
-@media screen and (max-width: 1300px) {
-
-
-
-
-}
 
 
 @media screen and (max-width: 1200px) {
 
-/*	.project_image {
-		width: 70vw;
-	}*/
+	.main_text {
+  		margin-left: 6vw;
+		margin-right: 6vw;
+	}
+
+
+	.project_image {
+		width: 100%;
+	}
 
 
 }
 
 @media screen and (max-width: 900px) {
 
-	.project_container {
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	.main_text {
-  		font-size: 17px;
-	}
 
 }
 
@@ -120,27 +108,21 @@
 
 @media screen and (max-width: 500px) {
 
-	.project_container {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
+
 
 	.project_image {
 		margin-top: 0px;
-		width: 65vw;
 	}
 
-	.title_container {
-		margin-top: 70px;
+
+	.title_text {
+		font-size: 23px;
 	}
 
 	.main_text {
-  		font-size: 17px;
+  		font-size: 16px;
 	}
 
-	.title_text {
-		font-size: large;
-	}
 
 
 
@@ -149,14 +131,14 @@
 
 @media screen and (max-width: 400px) {
 
-	.main_text {
-		font-size: 13px;
-		max-width: 70vw
+/*
+	.title_text {
+		font-size: 19px;
 	}
 
-	.title_text {
-		font-size: medium;
-	}
+	.main_text {
+		font-size: 15px;
+	}*/
 
 
 /*	.header_container {
