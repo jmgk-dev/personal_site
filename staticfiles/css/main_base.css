@@ -1,5 +1,4 @@
 body {
-/*	background-color: white;*/
 	margin: 0; 
 }
 
@@ -62,8 +61,8 @@ svg {
 
 .jmgk_logo {
 	width: 50px;
-	margin-top: 20px;
-	margin-left: 20px;
+	margin-top: 18px;
+	margin-left: 18px;
 }
 
 .question_mark {
@@ -96,7 +95,7 @@ svg {
 }
 
 .top_bar_spacer {
-	font-size: 20px;
+	font-size: 19px;
 	vertical-align: middle;
 }
 
@@ -108,19 +107,12 @@ svg {
 
 @media screen and (max-width: 1200px) {
 
-/*	.jmgk_logo {
-		width: 50px;
-		margin-top: 10px;
-		margin-left: 10px;
-	}
-
-	.question_mark {
-		width: 43px;
-		margin-top: -13px;
-	}*/
-
 	.top_bar_link {
 		font-size: 17px;
+	}
+
+	.top_bar_spacer {
+		font-size: 16px;
 	}
 
 }
@@ -129,17 +121,13 @@ svg {
 @media screen and (max-width: 800px) {
 
 
-	.top_bar_link {
-		font-size: 15px;
-	}
-
 }
 
 @media screen and (max-width: 400px) {
 
-/*	.top_bar_link {
-		font-size: 1px;
-	}*/
+	.top_bar_link {
+		font-size: 15px;
+	}
 
 }
 

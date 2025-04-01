@@ -36,7 +36,8 @@
 }
 
 .visit_link {
-	color: black;
+	color: purple;
+	font-weight: 500;
 }
 
 .image_container {
@@ -59,7 +60,6 @@
 
 
 @media screen and (max-width: 1700px) {
-
 
 
 
@@ -109,7 +109,6 @@
 @media screen and (max-width: 500px) {
 
 
-
 	.project_image {
 		margin-top: 0px;
 	}
@@ -124,48 +123,11 @@
 	}
 
 
-
-
 }
 
 
 @media screen and (max-width: 400px) {
 
-/*
-	.title_text {
-		font-size: 19px;
-	}
-
-	.main_text {
-		font-size: 15px;
-	}*/
-
-
-/*	.header_container {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-
-	.main_container {
-		margin-top: 75px;
-		align-items: center;
-	}
-
-	.slider-thumb::before {
-		width: 220px;
-		height: 220px;
-	}
-
-	.program_icons {
-		margin-top: -188px;
-  		margin-left: 35px;
-  		gap: 12px;
-  		width: 180px;
-	}
-
-	.program_icon {
-		width: 30px;
-	}*/
 
 
 }
