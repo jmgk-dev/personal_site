@@ -1,5 +1,8 @@
 body {
-	margin: 0; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 * {
@@ -39,12 +42,17 @@ svg {
     height: 100%;
 }
 
+.main_content {
+    flex: 1;
+}
+
 .top_bar {
-	height: 150px;
+	position: fixed;
+	top: 0;
 	width: 100%;
+	height: 135px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	position: fixed;
 	pointer-events: none;
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0));
 	z-index: 10;
@@ -99,9 +107,10 @@ svg {
 }
 
 .footer_links_container {
-	position: sticky;
-	display: flex;
-	justify-content: center;
+    text-align: center;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
 }
 
 

@@ -3,7 +3,6 @@
 	grid-template-rows: auto auto auto;
 	margin-left: 15vw;
 	margin-right: 15vw;
-}
 
 .contact_header_container {
 	grid-row: 1;
@@ -35,6 +34,7 @@
 	font-weight: 300;
 	text-align: left;
 	line-height: 1.4;
+	animation: fadeIn 0.5s;
 }
 
 .contact_links_container {
@@ -62,6 +62,7 @@
 .service_logo {
 	width: 20px;
 	vertical-align: middle;
+	animation: fadeIn 2s;
 }
 
 
