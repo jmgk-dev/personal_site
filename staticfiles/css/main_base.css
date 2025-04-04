@@ -25,7 +25,6 @@ button {
 }
 
 #bg-wrap {
-/*	display: none;*/
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +59,7 @@ svg {
 }
 
 .jmgk_logo {
-	width: 50px;
+	width: 60px;
 	margin-top: 18px;
 	margin-left: 18px;
 }
@@ -82,13 +81,13 @@ svg {
 
 .top_bar_links {
 	display: flex;
-	gap: 2vw;
+	gap: 1vw;
 }
 
 .top_bar_link {
 	color: black;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
 	font-style: normal;
 	font-weight: 500;
 	pointer-events: auto;
@@ -100,6 +99,7 @@ svg {
 }
 
 .footer_links_container {
+	position: sticky;
 	display: flex;
 	justify-content: center;
 }
@@ -114,6 +114,11 @@ svg {
 	.top_bar_spacer {
 		font-size: 16px;
 	}
+
+	.jmgk_logo {
+		width: 50px;
+	}
+
 
 }
 

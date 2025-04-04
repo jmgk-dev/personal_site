@@ -110,6 +110,9 @@ class UpdateLanguage(UpdateView):
     success_url = reverse_lazy("portfolio:success_page")
 
 
+def contact_page(request):
+    return render(request, "portfolio/contact_page.html")
+
 
 def about_page(request):
     return render(request, "portfolio/about_page.html")

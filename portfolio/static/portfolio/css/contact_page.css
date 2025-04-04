@@ -1,0 +1,146 @@
+.contact_page_container {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	margin-left: 15vw;
+	margin-right: 15vw;
+}
+
+.contact_header_container {
+	grid-row: 1;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 130px;
+}
+
+.contact_header_text {
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 500;
+	text-align: center;
+	animation: fadeIn 2s;
+}
+
+.contact_text_container {
+	grid-row: 2;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.contact_text {
+	width: 60%;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 300;
+	text-align: left;
+	line-height: 1.4;
+}
+
+.contact_links_container {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.contact_links {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.contact_link {
+	text-decoration: none;
+	color: black;
+}
+
+.service_title {
+	font-family: IBM Plex Mono;
+	vertical-align: middle;
+	animation: fadeIn 2s;
+}
+
+.service_logo {
+	width: 20px;
+	vertical-align: middle;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+
+	.contact_text {
+		width: 70%;
+	}
+
+	.contact_page_container {
+		margin-left: 10vw;
+		margin-right: 10vw;
+	}
+
+
+}
+
+@media screen and (max-width: 1200px) {
+
+	.contact_text {
+		width: 80%;
+		font-size: 17px;
+	}
+
+	.contact_page_container {
+		margin-left: 10vw;
+		margin-right: 10vw;
+	}
+
+	.contact_header_text {
+		font-size: 25px;
+	}
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.contact_text {
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.contact_header_text {
+		font-size: 22px;
+	}
+
+	.contact_text_container {
+		margin-bottom: 5px;
+	}
+
+	.service_title {
+		font-size: 15px;
+	}
+
+
+}
+
+@media screen and (max-width: 400px) {
+
+	.contact_text {
+		font-size: 15px;
+	}
+
+	.contact_header_text {
+		font-size: 20px;
+	}
+
+	.contact_text_container {
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.service_title {
+		font-size: 15px;
+	}
+
+
+}
+
+
