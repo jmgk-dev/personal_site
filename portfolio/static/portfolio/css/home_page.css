@@ -26,7 +26,7 @@
 	font-style: normal;
 	font-weight: 500;
 	text-align: left;
-	animation: fadeIn 2s;
+	animation: fadeIn 0.5s;
 }
 
 .here_link {
@@ -82,13 +82,14 @@
 	margin-bottom: 80px;
 	margin-left: auto;
 	margin-right: auto;
+	animation: fadeIn 2s;
 }
 
 /* ------------------------------------------------------------------ */
 
 .portfolio_container {
 	grid-row: 3;
-	animation: fadeIn 2s;
+	animation: fadeIn 2.5s;
 	margin-left: 6vw;
 	margin-right: 6vw;
 }
