@@ -5,7 +5,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['134.199.233.167']
+ALLOWED_HOSTS = ['jmgk.dev', 'www.jmgk.dev', '134.199.233.167']
 
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
