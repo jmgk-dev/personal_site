@@ -160,11 +160,11 @@
 @media screen and (max-width: 400px) {
 
 	.profile_image {
-		width: 120px;
+		width: 130px;
 	}
 
 	.profile_image_text {
-		font-size: 14px;
+		font-size: 15px;
 		margin-top: 2vw;
 		margin-left: 2vw;
 		margin-right: 2vw;
@@ -180,7 +180,7 @@
 @media screen and (max-width: 300px) {
 
 	.profile_image {
-		width: 100px;
+		width: 110px;
 	}
 
 	.profile_image_text {
@@ -190,9 +190,30 @@
 		margin-right: 2vw;
 	}
 
-/*	.about_text {
+	.about_text {
 	  font-size: 12px;
-	}*/
+	}
+
+
+}
+
+@media screen and (max-width: 250px) {
+
+	.profile_image {
+		display: none;
+	}
+
+	.profile_image_container {
+		height: auto;
+	}
+
+	.profile_image_text {
+		margin-bottom: 10px;
+	}
+
+  .about_text_container {
+    margin-top: 10px;
+   }
 
 
 }

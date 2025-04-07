@@ -116,6 +116,10 @@ svg {
 
 @media screen and (max-width: 1200px) {
 
+	.top_bar_links {
+		gap: 1.5vw;
+	}
+
 	.top_bar_link {
 		font-size: 17px;
 	}
@@ -142,6 +146,10 @@ svg {
 }
 
 @media screen and (max-width: 400px) {
+
+	.top_bar_links {
+		gap: 2.5vw;
+	}
 
 	.top_bar_link {
 		font-size: 15px;

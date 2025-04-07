@@ -15,7 +15,7 @@
 		<div class="main_container">
 
 			<span class="main_text">Hi, I’m Jamie Kingett. I’m a web developer specialising in Python 
-			and Django. Check out some of my work below, connect with me <a href="{% url 'portfolio:contact' %}" class="here_link">here</a>.
+			and Django. Check out some of my work below, connect with me <a href="{% url 'portfolio:contact' %}" class="here_link" aria-label="Link to my contact page">here</a>.
 			</span>
 
 		</div>
@@ -98,7 +98,7 @@
 		<li class="portfolio_item">
 			<span class="project_image_container">
 				<a href="{% url 'portfolio:project_detail' slug=project.slug %}">
-					<img class="project_image" src="{{ project.image.url }}">
+					<img class="project_image" src="{{ project.image.url }}" alt="screenshot of {{project.title}} project">
 				</a>
 			</span>
 			<div class="project_title_container">
