@@ -9,6 +9,7 @@
 {% block content %}
 
 <div class="home_page_container">
+	
 
 	<div class="header_container">
 
@@ -20,76 +21,13 @@
 
 		</div>
 
-		<div class="sub_container">
-
-<!-- 					<ul class="sub_links">
-						<li>
-							<a href="mailto:jamie@jmgk.dev" class="sub_link"><img src="{% static 'image/email.png' %}" alt="Email logo" class="service_logo">
-								<span class="service_title">jamie@jmgk.dev</span>
-							</a>
-						</li>
-
-						<li>
-							<a href="https://www.linkedin.com/in/jamie-kingett/" target="_blank" class="sub_link"><img src="{% static 'image/in_black.png' %}" alt="LinkedIn logo" class="service_logo">
-							<span class="service_title">LinkedIn</span>
-							</a>
-						</li>
-
-						<li><a href="https://github.com/jmgk-dev" target="_blank" class="sub_link"><img src="{% static 'image/github-mark.png' %}" alt="GitHub logo" class="service_logo">
-							<span class="service_title">GitHub</span>
-							</a>
-						</li>
-					</ul> -->
-
-				<!-- <span class="sub_text">I am a passionate and adaptable developer with a background in the creative and technology industries. I specialise in back-end development using Python, Django, Wagtail CMS and PostgreSQL. I enjoy working in creative and dynamic environments, taking the initiative and learning new concepts and viewpoints.</span> -->
-
-<!-- 			<div class="slider-thumb">
-
-					<div class="program_icons">
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg" class="program_icon" />
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="program_icon" />
-
-						<img src="{% static 'image/wagtail_500.png' %}" class="program_icon" />
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg" class="program_icon" />
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" class="program_icon" />
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" class="program_icon" />
-						
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="program_icon"  />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/digitalocean/digitalocean-original.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-plain.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg" class="program_icon" />
-
-            			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-plain.svg" class="program_icon" />
-          
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-plain.svg" class="program_icon" />
-
-						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-plain.svg" class="program_icon" />
-           
-					</div> -->
-
-			</div>
-
-		</div>
-
 	</div>
+
 
 	<div class="divider_container">
 		<div class="divider"></div>
 	</div>
+
 
 	<div class="portfolio_container">
 
@@ -105,24 +43,13 @@
 				<div class="project_title">
 					<a href="{% url 'portfolio:project_detail' slug=project.slug %}" class="project_text"><span>{{project.title}}</span></a>
 			</div>
-<!-- 			<span class="built_using">Built using: 
 
-				{% for lang in project.languages.all %}
-					{{ lang.title }}
-				{% endfor %}
-
-			</span> -->
 		</li>
 		{% endfor %}
 		</ul>
 
 	</div>
 
-<!--     <div id="video-background">
-        <div id="video-foreground">
-            <iframe id="vimeoplayer" src="https://player.vimeo.com/video/189495109?h=fb3abedcaf?autoplay=1&muted=1&loop=1&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-    </div> -->
 
 </div>
 

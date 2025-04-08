@@ -15,17 +15,11 @@
 		</div>
 
 		<div class="text_container">
-			<span class="main_text">{{ object.description }} <a href="{{ object.link }}" target="_blank" class="visit_link">Visit Site</a></span>
+			<span class="main_text">{{ object.description }} <a href="{{ object.link }}" target="_blank" class="visit_link" aria-label="Follow link to visit live site">Visit Site</a></span>
 		</div>
 
-<!-- 		<div class="languages_container">
-			{% for l in object.languages.all %}
-			<span>{{ l }}</span>
-			{% endfor %}
-		</div> -->
-
 		<div class="image_container">
-			<a href="{{ object.link }}" target="_blank"><img class="project_image" src="{{ object.image.url }}" alt="Screenshot of {{object.title}} project"></a>
+			<a href="{{ object.link }}" target="_blank" aria-label="Follow link to visit live site"><img class="project_image" src="{{ object.image.url }}" alt="Screenshot of {{object.title}} project"></a>
 		</div>
 
 	</div>

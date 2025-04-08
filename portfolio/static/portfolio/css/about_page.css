@@ -16,7 +16,7 @@
 	width: 60%;
 	display: flex;
 	justify-content: flex-start;
-	background-color: purple;
+	background-color: #bd19bd;
 	border-radius: 5px;
 }
 
@@ -119,7 +119,7 @@
 @media screen and (max-width: 600px) {
 
 	.about_text {
-	  	font-size: 16px;
+	  font-size: 16px;
 	}
 
 	.profile_image_text {
@@ -144,7 +144,7 @@
 	}
 
 	.about_text {
-	  	font-size: 16px;
+	  font-size: 16px;
 	}
 
 	.profile_image_text {

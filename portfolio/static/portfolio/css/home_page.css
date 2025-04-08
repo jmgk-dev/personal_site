@@ -36,38 +36,6 @@
 
 /* ------------------------------------------------------------------ */
 
-.sub_container {
-	grid-column: 2;
-	display: flex;
-  justify-content: center
-}
-
-.sub_links {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	margin-top: 30px;
-}
-
-.sub_link {
-	text-decoration: none;
-	color: black;
-}
-
-.service_logo {
-	width: 20px;
-	vertical-align: middle;
-	animation: fadeIn 2s;
-}
-
-.service_title {
-	font-family: IBM Plex Mono;
-	vertical-align: middle;
-	animation: fadeIn 2s;
-}
-
-/* ------------------------------------------------------------------ */
-
 .divider_container {
 	margin-left: 8vw;
 	margin-right: 8vw;
@@ -237,13 +205,6 @@
 	.main_container {
 		grid-column: 1;
 		grid-row: 1;
-	}
-
-	.sub_container {
-		grid-column: 1;
-		grid-row: 2;
-		margin-top: 0px;
-		justify-content: flex-start;
 	}
 
 }
