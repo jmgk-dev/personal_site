@@ -11,6 +11,6 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # Bugsnag
 BUGSNAG = {
-    'api_key': BUGSNAG_API_KEY,
+    'api_key': os.environ['BUGSNAG_API_KEY'],
     'project_root': '/path/to/your/app',
 }
