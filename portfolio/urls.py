@@ -12,5 +12,7 @@ urlpatterns = [
 	path("update-language/<slug:slug>", views.UpdateLanguage.as_view(), name="update_language"),
 	path("contact/", views.contact_page, name="contact"),
 	path("about/", views.about_page, name="about"),
-	path("success/", views.success_page, name="success_page")
+	path("success/", views.success_page, name="success_page"),
+	path("login/", views.SiteLogin.as_view(), name="login"),
+    path("logout/", views.SiteLogout.as_view(), name="logout"),
 ]

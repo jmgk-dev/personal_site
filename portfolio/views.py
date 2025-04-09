@@ -11,8 +11,10 @@ from django.shortcuts import render, redirect
 # from django.contrib import messages
 
 # from django.contrib.auth import get_user_model
-# from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, FormView, UpdateView
+from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 
 from .models import Project, Language
@@ -39,7 +41,9 @@ class ProjectDetail(DetailView):
     template_name = 'portfolio/project_detail.html'
 
 
-class AddProject(FormView):
+class AddProject(LoginRequiredMixin, FormView):
+
+    login_url = "portfolio:login"
 
     form_class = AddProjectForm
     template_name = 'portfolio/add_project.html'
@@ -61,7 +65,9 @@ class AddProject(FormView):
         return redirect("portfolio:success_page")
 
 
-class UpdateProject(UpdateView):
+class UpdateProject(LoginRequiredMixin, UpdateView):
+
+    login_url = "portfolio:login"
 
     model = Project
 
@@ -75,7 +81,9 @@ class UpdateProject(UpdateView):
 
 
 
-class AddLanguage(FormView):
+class AddLanguage(LoginRequiredMixin, FormView):
+
+    login_url = "portfolio:login"
 
     form_class = AddLanguageForm
     template_name = 'portfolio/add_language.html'
@@ -97,7 +105,9 @@ class AddLanguage(FormView):
         return redirect("portfolio:success_page")
 
 
-class UpdateLanguage(UpdateView):
+class UpdateLanguage(LoginRequiredMixin, UpdateView):
+
+    login_url = "portfolio:login"
 
     model = Language
 
@@ -120,3 +130,14 @@ def about_page(request):
 
 def success_page(request):
     return render(request, "portfolio/success_page.html")
+
+
+class SiteLogin(LoginView):
+    form = AuthenticationForm
+    template_name = "portfolio/login.html"
+    next_page = "portfolio:home"
+    redirect_authenticated_user = True
+
+
+class SiteLogout(LogoutView):
+    next_page = "kinorg:home"
