@@ -1,0 +1,44 @@
+.login_page {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	margin-left: 8vw;
+	margin-right: 8vw;
+}
+
+.login_title {
+	grid-row: 1;
+	display: flex;
+	justify-content: center;
+	margin-top: 130px;
+}
+
+.login_form_container {
+	margin-top: 130px;
+	grid-row: 2;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.login_form {
+	width: 50%;
+  	font-size: 18px;
+	font-style: normal;
+	font-weight: 300;
+	text-align: left;
+	line-height: 1.4;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	animation: fadeIn 1s;
+}
+
+@media screen and (max-width: 500px) {
+
+	.login_form {
+		width: 90%;
+	}
+}
+
+}
