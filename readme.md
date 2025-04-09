@@ -49,7 +49,7 @@ CREATE USER <myprojectuser> WITH PASSWORD 'password';
 ALTER ROLE <myprojectuser> SET client_encoding TO 'utf8';
 ALTER ROLE <myprojectuser> SET default_transaction_isolation TO 'read committed';
 ALTER ROLE <myprojectuser> SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE myproject TO <myprojectuser>;
+GRANT ALL PRIVILEGES ON DATABASE <myproject> TO <myprojectuser>;
 ```
 # Enable user to run tests
 ```bash
@@ -65,13 +65,13 @@ GRANT ALL ON SCHEMA public TO <myprojectuser>;
 ```bash
 \q
 ```
-
-
-# Create .env file
+# Add the secret key to .env
 ```bash
-touch .env
-nano .env
-DJANGO_SECRET_KEY=<secret_key_for_production>
+echo "DJANGO_SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" > .env
+```
+
+# Add the below to .env
+```bash
 DATABASE_SERVICE=<service>
 DATABASE_NAME=<database_name>
 DATABASE_USER=<database_user>
@@ -80,17 +80,27 @@ DATABASE_HOST=localhost
 DATABASE_PORT=5432
 ```
 
+# Migrate the database
+```bash
+python manage.py migrate
+```
+
 # Start the development server
 ```bash
 python manage.py runserver
 ```
+
+# Create superuser
+```bash
+python manage.py createsuperuser
+```
+
 
 ## Usage
 Instructions on how to use the project.
 ```bash
 # Example of how to use the project
 ```
-Screenshots or GIFs demonstrating the project.
 
 
 ## Contact Information
