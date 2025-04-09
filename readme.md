@@ -1,7 +1,7 @@
-# Personal Site
+# Personal Site / jmgk.dev
 
 ## Description
-This is a personal portfolio site built using Python, Django and PostgreSQL. Functionality for uploading projects with 
+This is a personal portfolio site built for my own work using Python, Django and PostgreSQL. Functionality for uploading projects with images and descriptions is included. The site is responsive and works on all devices.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -65,12 +65,12 @@ GRANT ALL ON SCHEMA public TO <myprojectuser>;
 ```bash
 \q
 ```
-# Add the secret key to .env
+# Create a secret key for production and add it to a new .env
 ```bash
 echo "DJANGO_SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" > .env
 ```
 
-# Add the below to .env
+# Add the below to .env replacing values
 ```bash
 DATABASE_SERVICE=<service>
 DATABASE_NAME=<database_name>
