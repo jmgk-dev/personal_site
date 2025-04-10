@@ -3,49 +3,6 @@ from django.utils.text import slugify
 from django.conf import settings
 
 
-class Language(models.Model):
-
-	title = models.CharField(
-		max_length=200,
-		null=False,
-		unique=True,
-		blank=False
-	)
-
-	link = models.URLField(
-		null=False,
-		blank=False
-	)
-
-	logo = models.ImageField(
-		upload_to='project_images/logos/',
-		null=True,
-		blank=True,
-		default=None
-	)
-
-	slug = models.SlugField(
-		unique=True,
-		blank=True
-	)
-
-	added = models.DateTimeField(
-		auto_now_add=True
-	)
-
-	def save(self, *args, **kwargs):
-		if not self.slug:
-			self.slug = slugify(self.title)
-		super().save(*args, **kwargs)
-
-	def __str__(self):
-		return self.title
-
-	class Meta:
-		ordering = ["title"]
-
-
-
 class Project(models.Model):
 
 	title = models.CharField(
@@ -61,10 +18,6 @@ class Project(models.Model):
 		blank=False
 	)
 
-	languages = models.ManyToManyField(
-		Language,
-		related_name='project'
-	)
 
 	link = models.URLField(
 		null=False,

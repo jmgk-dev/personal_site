@@ -78,6 +78,18 @@
 
 		<div class="top_bar_links_container">
 			<nav class="top_bar_links">
+				{% if user.is_authenticated %}
+				<span class="top_bar_link">
+					<form method="post" action="/logout/">
+    				{% csrf_token %}
+    				<button type="submit">logout</button>
+					</form>
+					
+				</span>
+				<span class="top_bar_spacer">|</span>
+				{% else %}
+				<div></div>
+				{% endif %}
 				<span><a href="{% url 'portfolio:contact' %}" class="top_bar_link">Contact</a></span>
 				<span class="top_bar_spacer">|</span>
 				<span><a href="{% url 'portfolio:about' %}" class="top_bar_link">About</a></span>

@@ -4,20 +4,17 @@ import requests
 
 from django.http import HttpResponse
 
-from .forms import AddProjectForm, UpdateProjectForm, AddLanguageForm, UpdateLanguageForm
+from .forms import AddProjectForm, UpdateProjectForm
 
 from django.shortcuts import render, redirect
-# from django.conf import settings
-# from django.contrib import messages
 
-# from django.contrib.auth import get_user_model
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, FormView, UpdateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
 
-from .models import Project, Language
+from .models import Project
 
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
@@ -64,6 +61,10 @@ class AddProject(LoginRequiredMixin, FormView):
 
         return redirect("portfolio:success_page")
 
+    
+    def form_invalid(self, form):
+        return render(self.request, self.template_name, {'form': form})
+
 
 class UpdateProject(LoginRequiredMixin, UpdateView):
 
@@ -79,45 +80,6 @@ class UpdateProject(LoginRequiredMixin, UpdateView):
 
     success_url = reverse_lazy("portfolio:success_page")
 
-
-
-class AddLanguage(LoginRequiredMixin, FormView):
-
-    login_url = "portfolio:login"
-
-    form_class = AddLanguageForm
-    template_name = 'portfolio/add_language.html'
-
-    def form_valid(self, form):
-        logo = form.cleaned_data["logo"]
-        title = form.cleaned_data["title"]
-        logo_title = f"{title}.png"
-
-        with Image.open(logo.file) as img:
-            img.thumbnail((500,500), Image.LANCZOS)
-
-            with NamedTemporaryFile(suffix=".png", delete=False) as temp_file:
-                img.save(temp_file, format='PNG', progressive=True, optimize=True)
-                form.instance.logo = File(temp_file, name=logo_title)
-
-                form.save()
-
-        return redirect("portfolio:success_page")
-
-
-class UpdateLanguage(LoginRequiredMixin, UpdateView):
-
-    login_url = "portfolio:login"
-
-    model = Language
-
-    slug_field = 'slug'
-    slug_url_kwarg = 'slug'
-
-    form_class = UpdateLanguageForm
-    template_name = 'portfolio/update_language.html'
-
-    success_url = reverse_lazy("portfolio:success_page")
 
 
 def contact_page(request):
@@ -140,4 +102,4 @@ class SiteLogin(LoginView):
 
 
 class SiteLogout(LogoutView):
-    next_page = "kinorg:home"
+    next_page = "portfolio:home"

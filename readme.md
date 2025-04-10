@@ -85,11 +85,6 @@ DATABASE_PORT=5432
 python manage.py migrate
 ```
 
-# Change settings to dev 
-```bash
-export DJANGO_SETTINGS_MODULE=personal_site.settings.dev
-```
-
 # Start the development server
 ```bash
 python manage.py runserver
