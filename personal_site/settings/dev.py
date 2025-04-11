@@ -1,5 +1,6 @@
 import os
 from datetime import date, timedelta
+from django.core.management.utils import get_random_secret_key
 
 from .base import *
 
@@ -10,9 +11,6 @@ ALLOWED_HOSTS = ["*"]
 if os.environ.get('RUN_MAIN') != 'true':
     print("Using development settings")
 
-SECRET_KEY = os.getenv(
-    'DJANGO_DEV_KEY',  
-    'django-insecure-default-key-for-dev-only'
-)
+SECRET_KEY = os.getenv('DJANGO_DEV_KEY', get_random_secret_key())
 
 
