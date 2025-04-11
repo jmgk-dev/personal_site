@@ -67,17 +67,24 @@ GRANT ALL ON SCHEMA public TO <myprojectuser>;
 ```
 # Create a secret key for production and add it to a new .env
 ```bash
-echo "DJANGO_SECRET_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" > .env
+echo "DJANGO_DEV_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" >> .env && \
+echo "DJANGO_SECURE_PRODUCTION_KEY=$(python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())')" >> .env
 ```
 
 # Add the below to .env replacing values
 ```bash
-DATABASE_SERVICE=<service>
+DATABASE_SERVICE=<database_name>
 DATABASE_NAME=<database_name>
 DATABASE_USER=<database_user>
 DATABASE_PASSWORD=<database_password>
 DATABASE_HOST=localhost
 DATABASE_PORT=5432
+```
+
+# Also add for Bugsnag if you wish to use
+```bash
+BUGSNAG_API_KEY=<BUGSNAG_API_KEY>
+PATH_TO_YOUR_APP=<PATH_TO_YOUR_APP>
 ```
 
 # Migrate the database

@@ -1,3 +1,7 @@
+a {
+	color: white;
+}
+
 .about_container {
 	display: grid;
 	grid-template-rows: auto auto auto;
@@ -41,7 +45,7 @@
 
 .about_text {
 	width: 65%;
-  font-size: 18px;
+	font-size: 18px;
 	font-style: normal;
 	font-weight: 300;
 	text-align: left;
@@ -61,9 +65,14 @@
 	font-weight: 600;
 }
 
-.font-weight-bold {
+.font_weight_bold {
 	font-weight: 600;
 }
+
+.font_colour {
+	color: black;
+}
+
 
 @keyframes fadeIn {
   0% { opacity: 0; }

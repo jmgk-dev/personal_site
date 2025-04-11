@@ -7,6 +7,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-SECRET_KEY = 'REDACTED_DEV_KEY'
+if os.environ.get('RUN_MAIN') != 'true':
+    print("Using development settings")
+
+SECRET_KEY = os.getenv(
+    'DJANGO_DEV_KEY',  
+    'django-insecure-default-key-for-dev-only'
+)
 
 
