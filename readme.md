@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 # Switch settings to dev
 ```bash
-export DJANGO_SETTINGS_MODULE=personal_site.settings.dev
+export DJANGO_ENV=development
 ```
 
 # Create PostgreSQL database and user
