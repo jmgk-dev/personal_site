@@ -17,3 +17,24 @@ BUGSNAG = {
     'api_key': os.environ['BUGSNAG_API_KEY'],
     'project_root': os.environ['PATH_TO_YOUR_APP'],
 }
+
+# Logging
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': '/home/jamie/django_error.log',  # Change 'jamie' if your username is different
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
