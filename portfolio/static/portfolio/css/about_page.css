@@ -30,9 +30,14 @@ a {
 	border-width: 1px;
 	width: 180px;
 	height: auto;
-	animation: fadeIn 0.5s;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
 	border-radius: 5px;
 	box-shadow: rgb(100 100 111 / 39%) 0px 7px 29px 0px;
+}
+
+.profile_image.loaded {
+	opacity: 1;
 }
 
 .about_text_container {
