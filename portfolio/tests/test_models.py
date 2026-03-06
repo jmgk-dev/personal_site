@@ -8,7 +8,8 @@ class ProjectModelTest(TestCase):
             title="Personal Site",
             description="A personal website project.",
             link="https://www.example.com/",
-            image=None
+            image=None,
+            order=0
         )
 
     def test_string_representation(self):
@@ -18,9 +19,9 @@ class ProjectModelTest(TestCase):
         self.assertEqual(self.project.slug, "personal-site")
 
     def test_ordering(self):
-        proj1 = Project.objects.create(title="Blog", description="A blog project.", link="https://www.blog.com/")
-        proj2 = Project.objects.create(title="Fishing", description="A fishing project.", link="https://www.fishing.com/")
+        proj1 = Project.objects.create(title="Blog", description="A blog project.", link="https://www.blog.com/", order=1)
+        proj2 = Project.objects.create(title="Fishing", description="A fishing project.", link="https://www.fishing.com/", order=2)
         projects = Project.objects.all()
-        self.assertEqual(projects[0], proj1)
-        self.assertEqual(projects[1], proj2)
-        self.assertEqual(projects[2], self.project)
+        self.assertEqual(projects[0], self.project)
+        self.assertEqual(projects[1], proj1)
+        self.assertEqual(projects[2], proj2)
