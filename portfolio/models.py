@@ -40,6 +40,14 @@ class Project(models.Model):
 		auto_now_add=True
 	)
 
+	order = models.PositiveIntegerField(
+		default=0
+	)
+
+	archived = models.BooleanField(
+		default=False
+	)
+
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = slugify(self.title)
@@ -49,6 +57,6 @@ class Project(models.Model):
 		return self.title
 
 	class Meta:
-		ordering = ["title"]
+		ordering = ["order"]
 
 

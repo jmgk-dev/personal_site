@@ -24,7 +24,7 @@ from PIL import Image
 
 class Home(ListView):
 
-    queryset = Project.objects.all()
+    queryset = Project.objects.filter(archived=False)
     template_name = "portfolio/home_page.html"
 
 

@@ -12,7 +12,7 @@ class UpdateProjectForm(forms.ModelForm):
 	
 	class Meta:
 		model = Project
-		fields = ['title', 'description', 'link', 'image']
+		fields = ['title', 'description', 'link', 'image', 'order', 'archived']
 
 
 
