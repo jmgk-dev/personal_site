@@ -12,7 +12,10 @@
 
 	<div class="profile_header">
 		<div class="profile_image_container">
-			<img class="profile_image" src="{% static 'image/headshot.png' %}" alt="Profile Photo">
+			<picture>
+				<source srcset="{% static 'image/headshot.webp' %}" type="image/webp">
+				<img class="profile_image" src="{% static 'image/headshot.png' %}" alt="Profile Photo" fetchpriority="high" onload="this.classList.add('loaded')">
+			</picture>
 		</div>
 	</div>
 
